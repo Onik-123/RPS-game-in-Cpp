@@ -1,27 +1,28 @@
 #pragma once
 
-#include <string>
-
+#include <iostream>
 #include "choice.hpp"
 
 class Player {
-	private:
-	Choice choice;
+private:
+    Choice choice;
 
-	public:
-	void getChoice() {
-		int input;
-        std::cout << "Enter 0 (Rock), 1 (Paper), or 2 (Scissors): ";
-        std::cin >> input;
+public:
+    void makeChoice() {
+        int input;
+        do {
+            std::cout << "Enter 0 (Rock), 1 (Paper), or 2 (Scissors): ";
+            std::cin >> input;
+            if (!(input >= 0 && input <= 2)) {
+                std::cout << "Invalid input. Please try again." << std::endl;
+            } else {
+                choice = static_cast<Choice>(input);
+                break;
+            }
+        } while (true);
+    }
 
-		if !(input >= 1 && input <= 3) {
-			std::cout << "Invalid input. Please try again." << std::endl;
-			getChoice();
-		} else {
-			choice = static_cast<Choice>(input);
-		}
-
-		Choice getChoiceValue() const {
-			return choice;
-		}
-	}
+    Choice getChoice() const {
+        return choice;
+    }
+};

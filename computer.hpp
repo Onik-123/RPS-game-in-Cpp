@@ -1,15 +1,22 @@
 #pragma once
 
+#include <cstdlib> // for rand()
+#include "choice.hpp"
+
 class Computer {
 private:
-    int choice;
+    Choice choice;
 
 public:
     void generateChoice() {
-        choice = rand() % 3;
+        choice = static_cast<Choice>(rand() % 3);
+    }
+
+    Choice getChoice() const {
+        return choice;
     }
 
     int getChoiceValue() const {
-        return choice;
+        return static_cast<int>(choice);
     }
 };
