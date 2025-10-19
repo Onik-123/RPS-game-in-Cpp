@@ -11,5 +11,4 @@ private:
 public:
     void makeChoice();
     Choice getChoice() const;
-    void displayChoice() const;
 };
