@@ -1,7 +1,6 @@
 #pragma once
-
-#pragma once
 #include <iostream>
+#include <string>
 
 enum class Choice { Rock = 0, Paper = 1, Scissors = 2 };
 
@@ -11,11 +10,8 @@ public:
     Choice choice;
 
     Player();
-
     Player(const std::string& name, Choice choice);
-
     Player(const Player& other);
-
     Player& operator=(const Player& other);
 
     bool operator==(const Player& other) const;

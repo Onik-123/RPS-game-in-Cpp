@@ -12,5 +12,7 @@ int main() {
     Computer computer;
     Engine engine(player, computer);
     engine.run();
+    Player::demoSTLContainerAndAlgorithms();
+    Player::demoSmartPointers();
     return 0;
 }
