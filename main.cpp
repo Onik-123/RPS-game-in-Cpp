@@ -6,8 +6,10 @@
 #include "computer.hpp"
 #include "engine.hpp"
 
+//comment
+
 int main() {
-    std::srand(std::time(nullptr)); // Seed random
+    std::srand(std::time(nullptr));
     Player player;
     Computer computer;
     Engine engine(player, computer);
