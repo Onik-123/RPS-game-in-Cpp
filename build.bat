@@ -1,5 +1,4 @@
 @echo off
-REM Set up the Visual Studio environment (adjust path if needed)
 call "%ProgramFiles(x86)%\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
 
 echo Building static libraries...
