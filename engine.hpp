@@ -15,35 +15,13 @@ public:
 
     void run() {
         player.makeChoice();
-        computer.generateChoice();
+        computer.makeChoice();
 
         // Display player's choice
-        std::cout << "You chose ";
-        switch (player.getChoice()) {
-            case ROCK:
-                std::cout << "Rock";
-                break;
-            case PAPER:
-                std::cout << "Paper";
-                break;
-            case SCISSORS:
-                std::cout << "Scissors";
-                break;
-        }
+		std::cout << "You chose " << player.getChoice();
 
         // Display computer's choice
-        std::cout << ", Computer chose ";
-        switch (computer.getChoice()) {
-            case ROCK:
-                std::cout << "Rock";
-                break;
-            case PAPER:
-                std::cout << "Paper";
-                break;
-            case SCISSORS:
-                std::cout << "Scissors";
-                break;
-        }
+		std::cout << ", Computer chose " << computer.getChoice();
 
         std::cout << " - ";
 
@@ -51,9 +29,9 @@ public:
         if (player.getChoice() == computer.getChoice()) {
             std::cout << "Tie!\n";
         } else if (
-            (player.getChoice() == ROCK && computer.getChoice() == SCISSORS) ||
-            (player.getChoice() == PAPER && computer.getChoice() == ROCK) ||
-            (player.getChoice() == SCISSORS && computer.getChoice() == PAPER)
+            (player.getChoice() == Choice::Rock && computer.getChoice() == Choice::Scissors) ||
+            (player.getChoice() == Choice::Paper && computer.getChoice() == Choice::Rock) ||
+            (player.getChoice() == Choice::Scissors && computer.getChoice() == Choice::Paper)
         ) {
             std::cout << "You win!\n";
         } else {

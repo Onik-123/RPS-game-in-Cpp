@@ -41,3 +41,8 @@
 *.dwo
 
 *.o, rps.exe
+
+# ignore builds
+build/
+out/
+.vs/

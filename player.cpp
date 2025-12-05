@@ -74,39 +74,6 @@ void Player::makeChoice() {
     } while (true);
 }
 
-void Player::demoSTLContainerAndAlgorithms() {
-    std::vector<Player> players = {
-        Player("Alice", Choice::Rock),
-        Player("Bob", Choice::Paper),
-        Player("Charlie", Choice::Scissors)
-    };
-
-    std::sort(players.begin(), players.end());
-
-    std::cout << "Sorted players:\n";
-    for (const auto& p : players) {
-        std::cout << p << std::endl;
-    }
-
-    auto it = std::find_if(players.begin(), players.end(),
-        [](const Player& p) { return p.name == "Bob"; });
-    if (it != players.end()) {
-        std::cout << "Found player: " << *it << std::endl;
-    }
-}
-
-void Player::demoSmartPointers() {
-    std::shared_ptr<Player> p1 = std::make_shared<Player>("Diana", Choice::Paper);
-    std::shared_ptr<Player> p2 = std::make_shared<Player>("Eve", Choice::Scissors);
-
-    std::vector<std::shared_ptr<Player>> playerPtrs = { p1, p2 };
-
-    std::cout << "Players managed by smart pointers:\n";
-    for (const auto& ptr : playerPtrs) {
-        std::cout << *ptr << std::endl;
-    }
-}
-
 Choice Player::getChoice() const {
     return choice;
 }

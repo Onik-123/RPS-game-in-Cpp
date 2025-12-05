@@ -1,8 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-
-enum class Choice { Rock = 0, Paper = 1, Scissors = 2 };
+#include "choice.hpp"
 
 class Player {
 public:

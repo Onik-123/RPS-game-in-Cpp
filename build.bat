@@ -1,23 +1,31 @@
 @echo off
-echo Compiling project...
+call "%ProgramFiles(x86)%\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
 
-g++ -c player.cpp -o player.o
-if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
+echo Building static libraries...
 
-g++ -c computer.cpp -o computer.o
-if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
+REM Compile and create static library for player
+cl /c /EHsc player.cpp
+lib /OUT:player.lib player.obj
 
-g++ -c engine.cpp -o engine.o
-if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
+REM Compile and create static library for computer
+cl /c /EHsc computer.cpp
+lib /OUT:computer.lib computer.obj
 
-g++ -c main.cpp -o main.o
-if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
+REM Compile and create static library for engine
+cl /c /EHsc engine.cpp
+lib /OUT:engine.lib engine.obj
 
-g++ player.o computer.o engine.o main.o -o rps.exe
-if %ERRORLEVEL% equ 0 (
+echo Compiling main.cpp...
+cl /c /EHsc main.cpp
+if errorlevel 1 exit /b %errorlevel%
+
+echo Linking everything...
+link main.obj player.lib computer.lib engine.lib /OUT:rps.exe
+if exist rps.exe (
     echo Build successful! Run rps.exe to play.
 ) else (
     echo Build failed!
 )
 
-exit /b %ERRORLEVEL%
+exit /b %errorlevel%
+
