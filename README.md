@@ -1,19 +1,36 @@
-# RPS-game-in-Cpp
-A simple Rock, Paper, Scissors game implemented in C++. Play against the computer, make your choice, and see if you can beat the odds! Features include input validation, score tracking, and replay options.
+# Rock-Paper-Scissors Project
 
+## Project Description
 
-## How to Build
-- Manual: g++ -c *.cpp -o *.o then g++ *.o -o rps
-- Automated: Run build.cmd (Windows) or make (Makefile).
+This project implements a classic Rock-Paper-Scissors game in C++ using an object-oriented approach. The codebase is modular, with separate classes for the player, computer opponent, and game engine. The project is designed for extensibility and maintainability, and includes a simple test suite for verifying core components.
 
-## How to Play
-- Run rps (or rps.exe).
-- Enter 0, 1, or 2.
-- See result.
+## Game Rules
 
-## Files
-- choice.hpp: Defines choices.
-- player.hpp / player.cpp: Handles input.
-- computer.hpp / computer.cpp: Generates computer choice.
-- engine.hpp / engine.cpp: Manages logic.
-- main.cpp: Runs the game.
+- The game is played between a human player and the computer.
+- Each round, both the player and the computer choose one of: Rock, Paper, or Scissors.
+- The winner is determined as follows:
+  - Rock beats Scissors
+  - Scissors beats Paper
+  - Paper beats Rock
+  - If both choose the same, the round is a draw.
+
+## Project Dependencies
+
+- **Development Environment:**  
+  - Visual Studio 2022 (recommended) or any C++20-compatible IDE
+  - CMake (with Ninja generator)
+- **Compiler:**  
+  - Microsoft Visual C++ (MSVC) or any C++20-compliant compiler
+- **Third-party Libraries:**  
+  - No other third-party libraries are required for the core game
+
+## Building the Application
+
+### Using CMake or Ninja
+
+1. **Install dependencies:**  
+   - Ensure CMake or Ninja are installed and available in your PATH.
+   - (Optional) If using SFML, download and set up SFML as described in their documentation.
+
+2. **Configure the project:**
+   
