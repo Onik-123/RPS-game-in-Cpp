@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # compile AsciiRenderer.cpp as a separate library
-add_library(AsciiRenderer AsciiRenderer.cpp)
+add_library(AsciiRenderer AsciiRenderer.cpp "test.cpp")
 
 set(SOURCES
     choice.cpp
@@ -14,6 +14,6 @@ set(SOURCES
     main.cpp
 )
 
-add_executable(app ${SOURCES})
+add_executable(app ${SOURCES} "test.cpp")
 
 target_link_libraries(app AsciiRenderer)
