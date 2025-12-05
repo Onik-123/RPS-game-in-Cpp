@@ -1,8 +1,9 @@
 #pragma once
 
 #include "choice.hpp"
+#include "player.hpp"
 
-class Computer {
+class Computer : public Player {
 private:
     Choice choice;
 
