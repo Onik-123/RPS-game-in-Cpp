@@ -1,14 +1,13 @@
-#include "player.hpp"
+#include "HumanPlayer.hpp"
 #include <iostream>
 #include <limits>
 
-Player::Player() : name(""), choice(Choice::Rock) {}
+HumanPlayer::HumanPlayer() : name(""), choice(Choice::Rock) {}
+HumanPlayer::HumanPlayer(const std::string& name, Choice choice) : name(name), choice(choice) {}
 
-Player::Player(const std::string& name, Choice choice) : name(name), choice(choice) {}
+HumanPlayer::HumanPlayer(const HumanPlayer& other) : name(other.name), choice(other.choice) {}
 
-Player::Player(const Player& other) : name(other.name), choice(other.choice) {}
-
-Player& Player::operator=(const Player& other) {
+HumanPlayer& HumanPlayer::operator=(const HumanPlayer& other) {
     if (this != &other) {
         name = other.name;
         choice = other.choice;
@@ -16,20 +15,20 @@ Player& Player::operator=(const Player& other) {
     return *this;
 }
 
-bool Player::operator==(const Player& other) const {
+bool HumanPlayer::operator==(const HumanPlayer& other) const {
     return name == other.name && choice == other.choice;
 }
-bool Player::operator!=(const Player& other) const {
+bool HumanPlayer::operator!=(const HumanPlayer& other) const {
     return !(*this == other);
 }
-bool Player::operator<(const Player& other) const {
+bool HumanPlayer::operator<(const HumanPlayer& other) const {
     return name < other.name || (name == other.name && static_cast<int>(choice) < static_cast<int>(other.choice));
 }
-bool Player::operator>(const Player& other) const {
+bool HumanPlayer::operator>(const HumanPlayer& other) const {
     return other < *this;
 }
 
-std::istream& operator>>(std::istream& is, Player& player) {
+std::istream& operator>>(std::istream& is, HumanPlayer& player) {
     std::cout << "Enter player name: ";
     is >> player.name;
     int input;
@@ -48,7 +47,7 @@ std::istream& operator>>(std::istream& is, Player& player) {
     return is;
 }
 
-std::ostream& operator<<(std::ostream& os, const Player& player) {
+std::ostream& operator<<(std::ostream& os, const HumanPlayer& player) {
     os << "Player: " << player.name << ", Choice: ";
     switch (player.choice) {
         case Choice::Rock: os << "Rock"; break;
@@ -58,7 +57,7 @@ std::ostream& operator<<(std::ostream& os, const Player& player) {
     return os;
 }
 
-void Player::makeChoice() {
+void HumanPlayer::makeChoice() {
     int input;
     do {
         std::cout << "Enter 0 (Rock), 1 (Paper), or 2 (Scissors): ";
@@ -74,6 +73,6 @@ void Player::makeChoice() {
     } while (true);
 }
 
-Choice Player::getChoice() const {
+Choice HumanPlayer::getChoice() const {
     return choice;
 }
