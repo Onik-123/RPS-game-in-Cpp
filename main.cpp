@@ -7,8 +7,6 @@
 #include "computer.hpp"
 #include "engine.hpp"
 
-//comment
-
 int main() {
     std::srand(std::time(nullptr));
     std::unique_ptr<HumanPlayer> player = std::make_unique<HumanPlayer>();
