@@ -26,7 +26,7 @@ This project implements a classic Rock-Paper-Scissors game in C++ using an objec
 
 ## Building the Application
 
-### Using CMake or Ninja
+### Using CMake
 
 1. **Install dependencies:**  
    - Ensure CMake is installed and available in your PATH.
