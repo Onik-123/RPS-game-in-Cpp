@@ -18,7 +18,7 @@ This project implements a classic Rock-Paper-Scissors game in C++ using an objec
 
 - **Development Environment:**  
   - Visual Studio 2022 (recommended) or any C++20-compatible IDE
-  - CMake (with Ninja generator)
+  - CMake
 - **Compiler:**  
   - Microsoft Visual C++ (MSVC) or any C++20-compliant compiler
 - **Third-party Libraries:**  
@@ -29,7 +29,7 @@ This project implements a classic Rock-Paper-Scissors game in C++ using an objec
 ### Using CMake or Ninja
 
 1. **Install dependencies:**  
-   - Ensure CMake or Ninja are installed and available in your PATH.
+   - Ensure CMake is installed and available in your PATH.
    - (Optional) If using SFML, download and set up SFML as described in their documentation.
 
 2. **Configure the project:**
