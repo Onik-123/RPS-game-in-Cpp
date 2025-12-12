@@ -32,5 +32,5 @@ This project implements a classic Rock-Paper-Scissors game in C++ using an objec
    - Ensure CMake is installed and available in your PATH.
    - (Optional) If using SFML, download and set up SFML as described in their documentation.
 
-2. **Configure the project:**
+2. **Configure the project.**
    
